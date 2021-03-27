@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: content: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Electron Minimum Template</title>
+</head>
+<body>
+  <script>
+    // var pic_array = new Array("js/dot_001.png","js/dot_002.png") 
+
+    /* 乱数生成 */
+    function result(e)
+    {
+        /* 値を取得 */
+        var cnt = 0;
+        var text = document.getElementById("count");
+        
+        var min = Number(document.getElementById("min").value);
+        var max = Number(document.getElementById("max").value);
+        var msg = document.getElementById("msg");
+
+        /* エラハン */
+        if (isNaN(min) && isNaN(max)){
+          msg.innerHTML = "数値をいれて！！！";
+        } else {
+          if (min >= max){
+            msg.innerHTML = "ここからここまでのいみわかる？";
+          } else {
+            if (0<=min && min<=10000 && 0<=max && max<=10000){
+              /* 乱数生成&結果表示 */
+              var res = Math.floor( Math.random() * (max + 1 - min) ) + min;
+              text.innerHTML = res;
+              msg.innerHTML = "これだ！！！！！！！！！！！！！！！！！！";
+            } else {
+              msg.innerHTML = "５桁までだよ？";
+            }
+          }
+        }
+      };
+
+      /* テキストボックスの中と結果をリセット */
+      function reset(e)
+      {
+        document.getElementById("count").innerHTML = 0;;
+        document.getElementById("min").value = "";
+        document.getElementById("max").value = "";
+        document.getElementById("msg").innerHTML = "";
+        // document.getElementById("pic").src = pic_array[0];
+      };
+
+
+   
+
+  </script>
+
+
+    <table>
+      <tr><tb>
+        <p class="title" id="title">数キメてあげます!!</p>
+      </tb></tr>
+      <tr><tb>
+          <p class="count" id="count">0</p>
+      </tb></tr>
+      <tr><tb>&nbsp;</tb></tr>
+      <tr>
+        <tb>
+          ここから:&nbsp;<input type="number" id="min" value="" class="text">
+        </tb>
+      </tr>
+      <tr>
+        <tb>
+          ここまで:&nbsp;<input type="number" id="max" value="" class="text">
+        </tb>
+      </tr>
+      <tr>
+        <tb>
+          <p class="title" id="point">※5桁まで、マイナスはなし</p>
+        </tb>
+      </tr>
+      <tr><tb>&nbsp;</tb></tr>
+      <tr><tb>
+        <p class="msg" id="msg"></p>
+      </tb></tr>
+      <tr>
+        <tb>
+          <div>
+            <img id="pic" onclick="result();" src="js/dot_001.png">
+          </div>
+        </tb>
+      </tr>
+      <tr style="width:100%"><tb>&nbsp;</tb></tr>
+      <tr style="width:100%">
+        <tb style="width:20%">&nbsp;</tb>
+        <tb>
+          <div>
+            <tb>
+              <button id="clickBtn" onclick="result();">&nbsp;&nbsp;開始&nbsp;&nbsp;</button>
+            </tb>
+            <tb>&nbsp;&nbsp;&nbsp;</tb>
+            <tb>
+              <button id="resetBtn" onclick="reset();">リセット</button>
+            </tb>
+          </div>
+        </tb>
+      </tr>
+      <tr><tb>&nbsp;</tb></tr>
+    </table>
+
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+/*  */
+table{
+  width: 100%;
+  /*  bgの色 */
+  /*  background-color: #DECBBB; */
+}
+
+tr{
+  width: 100%;
+  text-align: center;
+}
+
+tb{
+  width: 100%;
+  text-align: center;
+
+}
+
+div{
+  text-align: center;
+
+}
+
+.title{
+  /*font-size: 100%;*/
+  font-family: 'Meiryo UI','メイリオ',sans-serif;
+  text-align: center;
+}
+
+.count{
+  font-size: 48px;
+  font-family: 'Meiryo UI','メイリオ',sans-serif;
+  text-align: center;
+}
+
+img{
+  width: 60%;
+  height: 60%;
+
+}
+
+.text{
+  width: 20%;
+}
+
+.msg{
+  color: red;
+}
+
+button{
+  /*  文字の色 */
+  color: #BDCCDA;
+
+  /*  枠なし */             
+  border-style: none;
+
+  /*  余白 */           
+  padding: 8px 10px;
+
+  /*  丸み */           
+  /*  border-radius: 20px;   */ 
+
+  /*  bgの色 */    
+  background-color: #649FCC;
+
+  /* ボタンの影の指定
+   * 影の横幅を2px
+   * 縦長を2px
+   * ぼかしを3px
+   * 広がりを1px
+   * 色を#666（グレー）に指定 */
+   box-shadow: 2px 2px 3px 1px #666;
+   -moz-box-shadow: 2px 2px 3px 1px #666;
+   -webkit-box-shadow: 2px 2px 3px 1px #666;
+
+  
+}
